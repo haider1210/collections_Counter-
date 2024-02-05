@@ -289,6 +289,21 @@ Here are explanations for each of the operations you've listed for a `Counter` o
    ```python
    c = Counter(a=4, b=2, c=0, d=-2)
    positive_counts = +c
+
+c = Counter(a=3, b=1)
+d = Counter(a=1, b=2)
+c + d                       # add two counters together:  c[x] + d[x]
+Counter({'a': 4, 'b': 3})
+c - d                       # subtract (keeping only positive counts)
+Counter({'a': 2})
+c & d                       # intersection:  min(c[x], d[x])
+Counter({'a': 1, 'b': 1})
+c | d                       # union:  max(c[x], d[x])
+Counter({'a': 3, 'b': 2})
+c == d                      # equality:  c[x] == d[x]
+False
+c <= d                      # inclusion:  c[x] <= d[x]
+False
    print(positive_counts)  # Output: Counter({'a': 4, 'b': 2})
    ```
 
